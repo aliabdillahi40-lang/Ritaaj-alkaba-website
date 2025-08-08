@@ -1,76 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ritaaj Al-Kaaba</title>
+    <title>رحلة العمرة | تصميم عصري وروحاني</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <img src="logo.png" alt="Logo" class="logo">
-        <button id="langToggle">AR</button>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">نور الحرمين</div>
+            <ul class="nav-links">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#packages">برامجنا</a></li>
+                <li><a href="#gallery">معرض الصور</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" style="background-image: url('kaaba.jpg');">
-        <div class="hero-text" data-en="Welcome to Ritaaj Al-Kaaba" data-ar="مرحباً بكم في ريتاج الكعبة">
-            Welcome to Ritaaj Al-Kaaba
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">لبيك اللهم عمرة</h1>
+            <p class="hero-subtitle">انطلق في رحلة إيمانية لا تُنسى إلى أطهر البقاع</p>
+            <a href="#packages" class="btn btn-primary">اكتشف برامجنا</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
-        <h2 data-en="About Us" data-ar="من نحن">About Us</h2>
-        <p data-en="We are dedicated to serving pilgrims and providing spiritual guidance for visitors to the holy cities."
-           data-ar="نحن ملتزمون بخدمة الحجاج وتقديم الإرشاد الروحي لزوار المدن المقدسة.">
-           We are dedicated to serving pilgrims and providing spiritual guidance for visitors to the holy cities.
-        </p>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery">
-        <h2 data-en="Gallery" data-ar="المعرض">Gallery</h2>
-        <div class="gallery-images">
-            <img src="kaaba.jpg" alt="Kaaba">
-            <img src="madina.jpg" alt="Madina">
+    <section id="about" class="content-section">
+        <div class="container">
+            <h2 class="section-title">جوهر العمرة</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>العمرة هي زيارة المسجد الحرام في مكة المكرمة لأداء مناسك خاصة، وهي قربة يتقرب بها المسلم إلى الله تعالى. تبدأ بالإحرام، ثم الطواف بالكعبة سبعة أشواط، والسعي بين الصفا والمروة سبعة أشواط، وتنتهي بالحلق أو التقصير.</p>
+                    <p>نحن في "نور الحرمين" نتشرف بخدمة ضيوف الرحمن، ونوفر لهم كل سبل الراحة والطمأنينة ليؤدوا مناسكهم في أجواء روحانية خالصة.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1587069255291-0323a0595914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="الكعبة المشرفة">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact">
-        <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" data-en="Your Name" data-ar="اسمك">
-            <input type="email" placeholder="Your Email" data-en="Your Email" data-ar="بريدك الإلكتروني">
-            <textarea placeholder="Your Message" data-en="Your Message" data-ar="رسالتك"></textarea>
-            <button type="submit" data-en="Send" data-ar="إرسال">Send</button>
-        </form>
+    <section id="packages" class="content-section decorated-section">
+        <div class="container">
+            <h2 class="section-title">برامجنا المميزة</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-icon">
+                        <img src="https://img.icons8.com/ios/100/b49b6a/star--v1.png" alt="ايقونة نجمة"/>
+                    </div>
+                    <h3>البرنامج الاقتصادي</h3>
+                    <p>إقامة مريحة في فنادق قريبة من الحرم بتكلفة مدروسة، مع توفير كافة الخدمات الأساسية.</p>
+                    <span class="price">ابتداءً من 3500 ريال</span>
+                </div>
+                <div class="package-card featured">
+                     <div class="package-icon">
+                        <img src="https://img.icons8.com/ios/100/FFFFFF/crown.png" alt="ايقونة تاج"/>
+                    </div>
+                    <h3>البرنامج المُميّز</h3>
+                    <p>إقامة فاخرة في فنادق 5 نجوم مطلة على الحرم، مع خدمات راقية ومواصلات خاصة.</p>
+                    <span class="price">ابتداءً من 7000 ريال</span>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">
+                        <img src="https://img.icons8.com/ios/100/b49b6a/family.png" alt="ايقونة عائلة"/>
+                    </div>
+                    <h3>برنامج العائلات</h3>
+                    <p>برامج مصممة خصيصاً للعائلات، تشمل غرفاً متصلة وخدمات مناسبة للأطفال.</p>
+                    <span class="price">حسب عدد الأفراد</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p data-en="© 2025 Ritaaj Al-Kaaba. All rights reserved."
-           data-ar="© 2025 ريتاج الكعبة. جميع الحقوق محفوظة.">
-           © 2025 Ritaaj Al-Kaaba. All rights reserved.
-        </p>
+    <section id="gallery" class="content-section">
+        <div class="container">
+            <h2 class="section-title">صور من رحلاتنا</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1563897769530-5b552cf07d43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="المسجد النبوي">
+                <img src="https://images.unsplash.com/photo-1531219266391-4979e27b1442?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="الطواف حول الكعبة">
+                <img src="https://images.unsplash.com/photo-1605711211241-52541a166141?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="ساعة مكة">
+                <img src="https://images.unsplash.com/photo-1599459284218-e93de458a8a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="زخرفة اسلامية">
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="content-section decorated-section">
+        <div class="container">
+            <h2 class="section-title">جاهز لرحلة العمر؟</h2>
+            <p style="text-align:center; margin-bottom: 40px; color: #dfd8c8;">تواصل معنا الآن لحجز مكانك أو للاستفسار عن أي تفاصيل.</p>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="الاسم الكامل" required>
+                <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+                <textarea name="message" rows="5" placeholder="رسالتك" required></textarea>
+                <button type="submit" class="btn btn-primary">أرسل الآن</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 نور الحرمين. جميع الحقوق محفوظة.</p>
+        </div>
     </footer>
-
-    <script>
-        const langToggle = document.getElementById("langToggle");
-        let currentLang = "en";
-
-        langToggle.addEventListener("click", () => {
-            currentLang = currentLang === "en" ? "ar" : "en";
-            document.querySelectorAll("[data-en]").forEach(el => {
-                el.textContent = el.getAttribute(`data-${currentLang}`);
-            });
-            langToggle.textContent = currentLang === "en" ? "AR" : "EN";
-            document.body.style.direction = currentLang === "ar" ? "rtl" : "ltr";
-        });
-    </script>
 
 </body>
 </html>
