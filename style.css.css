@@ -1,97 +1,314 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #faf5f0;
-    color: #333;
+/* --- الإعدادات العامة والخطوط --- */
+:root {
+    --primary-color: #b49b6a; /* ذهبي مطفي */
+    --secondary-color: #2c3e50; /* كحلي داكن */
+    --light-bg: #fdfaf6; /* بيج فاتح جداً */
+    --dark-bg: #1a252f;
+    --text-color: #333;
+    --light-text: #dfd8c8; /* لون النص الفاتح للخلفيات الداكنة */
+    --font-primary: 'Amiri', serif; /* خط عربي أصيل للعناوين */
+    --font-secondary: 'Cairo', sans-serif; /* خط عصري للنصوص */
 }
 
-/* Navbar */
+body {
+    font-family: var(--font-secondary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    direction: rtl; /* دعم اللغة العربية */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- الشريط العلوي --- */
+.main-header {
+    background-color: rgba(26, 37, 47, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: #1a3c34;
-    color: white;
-}
-.logo {
-    height: 50px;
-}
-.navbar button {
-    background: #e0b973;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
+    width: 90%;
+    margin: auto;
 }
 
-/* Hero */
-.hero {
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
+.logo {
+    font-family: var(--font-primary);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- الواجهة الرئيسية (Hero Section) --- */
+#hero {
+    position: relative;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.hero-text {
-    background: rgba(0,0,0,0.5);
-    color: white;
-    padding: 20px 40px;
-    font-size: 2em;
-    border-radius: 10px;
-}
-
-/* About */
-.about, .gallery, .contact {
-    padding: 50px 20px;
     text-align: center;
-}
-.about h2, .gallery h2, .contact h2 {
-    color: #1a3c34;
+    color: #fff;
+    background: url('https://images.unsplash.com/photo-1563931999233-4a0b27429633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80') no-repeat center center/cover;
 }
 
-/* Gallery */
-.gallery-images {
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* تعتيم الخلفية */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: 8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--primary-color);
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin: 10px 0 30px;
+    font-weight: 300;
+}
+
+.btn {
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* --- أقسام المحتوى العامة --- */
+.content-section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+/* زخرفة تحت العنوان */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 20px auto 0;
+}
+
+/* قسم نبذة عن العمرة */
+#about .about-content {
     display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.gallery-images img {
-    width: 300px;
-    border-radius: 10px;
-    border: 3px solid #e0b973;
+    align-items: center;
+    gap: 50px;
 }
 
-/* Contact */
-.contact form {
+#about .about-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+#about .about-image {
+    flex: 1;
+}
+
+#about .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* قسم البرامج (مع خلفية مزخرفة) */
+.decorated-section {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+    background-blend-mode: overlay;
+}
+
+.decorated-section .section-title {
+    color: #fff;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.package-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(180, 155, 106, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.package-card.featured {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+}
+
+.package-card.featured p {
+    color: #333;
+}
+
+.package-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.package-card.featured h3 {
+    color: #fff;
+}
+
+.package-card p {
+    line-height: 1.8;
+    color: var(--light-text);
+}
+
+.package-card .price {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.package-card.featured .price {
+    color: var(--dark-bg);
+}
+
+/* --- معرض الصور --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* --- قسم التواصل --- */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: auto;
-}
-.contact input, .contact textarea, .contact button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.contact button {
-    background: #1a3c34;
-    color: white;
-    cursor: pointer;
-}
-.contact button:hover {
-    background: #e0b973;
-    color: black;
+    gap: 20px;
 }
 
-/* Footer */
-footer {
-    background: #1a3c34;
-    color: white;
+.contact-form input, .contact-form textarea {
     padding: 15px;
+    font-family: var(--font-secondary);
+    border: 1px solid rgba(180, 155, 106, 0.5);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: var(--light-text);
+    opacity: 0.7;
+}
+
+.contact-form button {
+    align-self: center;
+    cursor: pointer;
+}
+
+/* --- التذييل --- */
+.main-footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 30px 0;
     text-align: center;
+}
+
+.main-footer p {
+    margin: 0;
 }
