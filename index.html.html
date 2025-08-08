@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritaaj Al-Kaaba</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <img src="logo.png" alt="Logo" class="logo">
+        <button id="langToggle">AR</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('kaaba.jpg');">
+        <div class="hero-text" data-en="Welcome to Ritaaj Al-Kaaba" data-ar="مرحباً بكم في ريتاج الكعبة">
+            Welcome to Ritaaj Al-Kaaba
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2 data-en="About Us" data-ar="من نحن">About Us</h2>
+        <p data-en="We are dedicated to serving pilgrims and providing spiritual guidance for visitors to the holy cities."
+           data-ar="نحن ملتزمون بخدمة الحجاج وتقديم الإرشاد الروحي لزوار المدن المقدسة.">
+           We are dedicated to serving pilgrims and providing spiritual guidance for visitors to the holy cities.
+        </p>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <h2 data-en="Gallery" data-ar="المعرض">Gallery</h2>
+        <div class="gallery-images">
+            <img src="kaaba.jpg" alt="Kaaba">
+            <img src="madina.jpg" alt="Madina">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" data-en="Your Name" data-ar="اسمك">
+            <input type="email" placeholder="Your Email" data-en="Your Email" data-ar="بريدك الإلكتروني">
+            <textarea placeholder="Your Message" data-en="Your Message" data-ar="رسالتك"></textarea>
+            <button type="submit" data-en="Send" data-ar="إرسال">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-en="© 2025 Ritaaj Al-Kaaba. All rights reserved."
+           data-ar="© 2025 ريتاج الكعبة. جميع الحقوق محفوظة.">
+           © 2025 Ritaaj Al-Kaaba. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        const langToggle = document.getElementById("langToggle");
+        let currentLang = "en";
+
+        langToggle.addEventListener("click", () => {
+            currentLang = currentLang === "en" ? "ar" : "en";
+            document.querySelectorAll("[data-en]").forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+            langToggle.textContent = currentLang === "en" ? "AR" : "EN";
+            document.body.style.direction = currentLang === "ar" ? "rtl" : "ltr";
+        });
+    </script>
+
+</body>
+</html>

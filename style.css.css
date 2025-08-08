@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #faf5f0;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1a3c34;
+    color: white;
+}
+.logo {
+    height: 50px;
+}
+.navbar button {
+    background: #e0b973;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hero */
+.hero {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-text {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 20px 40px;
+    font-size: 2em;
+    border-radius: 10px;
+}
+
+/* About */
+.about, .gallery, .contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+.about h2, .gallery h2, .contact h2 {
+    color: #1a3c34;
+}
+
+/* Gallery */
+.gallery-images {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.gallery-images img {
+    width: 300px;
+    border-radius: 10px;
+    border: 3px solid #e0b973;
+}
+
+/* Contact */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+.contact input, .contact textarea, .contact button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact button {
+    background: #1a3c34;
+    color: white;
+    cursor: pointer;
+}
+.contact button:hover {
+    background: #e0b973;
+    color: black;
+}
+
+/* Footer */
+footer {
+    background: #1a3c34;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
